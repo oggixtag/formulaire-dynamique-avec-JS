@@ -1,31 +1,64 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Form</title>
-    <script src="./form.js" defer></script>
-  </head>
-  <body>
-    <h1>Inserez les informations</h1>
-    <form action="" method="get">
-      <label for="nom">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Form</title>
+  <script src="./form.js"></script>
+</head>
+
+<body>
+  <h1>Inserez les informations</h1>
+  <form action="" method="get">
+    <div class="form-control"></div>
+    <fieldset>
+      <legend>
+        <h2>Informations</h2>
+      </legend>
+      <div class="form-control">
+        <label for="nom">Nom:</label>
         <input type="text" name="nom" id="nom" />
-      </label>
-      <label for="prenom">
+      </div>
+      <div class="form-control">
+        <label for="prenom">Prénom:</label>
         <input type="text" name="prenom" id="prenom" />
-      </label>
-      <fieldset>
-        <legend>informations</legend>
-        <div>
-          <input type="radio" name="statut" id="par" value="par" />
-          <label for="par"> </label>
+      </div>
+      <div>
+        <input type="radio" name="statut" id="particulier" value="particulier" />
+        <label for="particulier">Particulier</label>
+      </div>
+      <div>
+        <input type="radio" name="statut" id="professionnel" value="professionnel" />
+        <label for="professionnel">Professionnel</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>
+        <h2>Message</h2>
+      </legend>
+      <div class="form-control">
+        <div class="form-control">
+          <label for="objet">Objet :</label>
+          <select type="text" name="objet" id="objet" required>
+            <option value="demande_de_contact">Demande de contact</option>
+            <option value="offre_d'emploi" selected>Offre d'emploi</option>
+            <option value="envoi_d'une_brochure_tarifiaire">
+              Envoi d'une brochure tarifaire
+            </option>
+          </select>
         </div>
-        <div>
-          <input type="radio" name="statut" id="pro" value="pro" />
-          <label for="pro"> </label>
+        <div class="form-control">
+          <label for="email">Email</label><input type="email" id="email" name="email" placeholder="email@mail.com"
+            required />
         </div>
-      </fieldset>
-    </form>
-  </body>
+        <div class="form-control">
+          <textarea name="message" id="messageArea" cols="30" rows="10" placeholder="Message..." required></textarea>
+        </div>
+        <button type="submit">Envoyer</button>
+      </div>
+    </fieldset>
+  </form>
+</body>
+
 </html>
